@@ -1,0 +1,50 @@
+<head>
+    <style>
+    #container {
+        margin-bottom: 10px;
+    }
+    #unordered {
+        list-style-type: none;
+        padding-left: 0; 
+    }
+    /* Styling the list items */
+    #unordered li {
+        margin-bottom: 5px;
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+    /* Styling the delete button */
+    #unordered li button {
+        background-color: #dc3545; /* Bootstrap red color */
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+</style
+</head>
+<input id="container">
+<button onclick="add()">Add</button>
+<ul id="unordered">
+    <li>Hello
+    <button onclick="deleteItem(event)">Delete</button>
+    </li>
+</ul>
+<script>
+    var upper=document.getElementById("container")
+    var order=document.getElementById("unordered")
+    function add()
+    {
+    var list=document.createElement("li")
+    list.innerHTML=upper.value+"<button onclick='deleteItem(event)'>Delete</button>"
+    order.append(list)
+    }
+    function deleteItem(event)
+    {
+        event.target.parentElement.remove()
+    }
+</script>
